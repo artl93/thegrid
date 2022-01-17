@@ -1,0 +1,991 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{59D3CC9A-C13B-4C15-93A0-EABE60CC7D08}</ProjectGuid>
+    <ProjectTypeGuids>{96E2B04D-8817-42c6-938A-82C39BA4D311};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
+    <OutputPath>bin\$(Platform)\$(Configuration)</OutputPath>
+    <ContentRootDirectory>Content</ContentRootDirectory>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>TheGridContent</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ContentManifestExtensions">
+      <HintPath>..\..\shared\bin\ContentManifestExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.EffectImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.FBXImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.TextureImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.XImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.AudioImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GridBackground.png">
+      <Name>Background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_PremultiplyAlpha>False</ProcessorParameters_PremultiplyAlpha>
+      <ProcessorParameters_ColorKeyEnabled>False</ProcessorParameters_ColorKeyEnabled>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GridIcon.png">
+      <Name>GridIcon</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buttons\GridButtonDARK.png">
+      <Name>GridButtonDARK</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buttons\GridButtonLIT.png">
+      <Name>GridButtonLIT</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buttons\GridButtonLITBRITE.png">
+      <Name>GridButtonLITBRITE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buttons\GridButtonDARKDIM.png">
+      <Name>GridButtonDARKDIM</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buttons\ButtonLitAnimation.png">
+      <Name>ButtonLitAnimation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sounds\HelioSounds\Sound005.wav">
+      <Name>Sound005</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound006.wav">
+      <Name>Sound006</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound007.wav">
+      <Name>Sound007</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound008.wav">
+      <Name>Sound008</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound009.wav">
+      <Name>Sound009</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound010.wav">
+      <Name>Sound010</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound011.wav">
+      <Name>Sound011</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound012.wav">
+      <Name>Sound012</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound013.wav">
+      <Name>Sound013</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound014.wav">
+      <Name>Sound014</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound001.wav">
+      <Name>Sound001</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound015.wav">
+      <Name>Sound015</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound016.wav">
+      <Name>Sound016</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound017.wav">
+      <Name>Sound017</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound018.wav">
+      <Name>Sound018</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound019.wav">
+      <Name>Sound019</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound020.wav">
+      <Name>Sound020</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound021.wav">
+      <Name>Sound021</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound022.wav">
+      <Name>Sound022</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound023.wav">
+      <Name>Sound023</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound024.wav">
+      <Name>Sound024</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound002.wav">
+      <Name>Sound002</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound025.wav">
+      <Name>Sound025</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound026.wav">
+      <Name>Sound026</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound027.wav">
+      <Name>Sound027</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound028.wav">
+      <Name>Sound028</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound029.wav">
+      <Name>Sound029</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound030.wav">
+      <Name>Sound030</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound031.wav">
+      <Name>Sound031</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound032.wav">
+      <Name>Sound032</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound033.wav">
+      <Name>Sound033</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound034.wav">
+      <Name>Sound034</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound003.wav">
+      <Name>Sound003</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound035.wav">
+      <Name>Sound035</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound036.wav">
+      <Name>Sound036</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound037.wav">
+      <Name>Sound037</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\HelioSounds\Sound004.wav">
+      <Name>Sound004</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Manifest.manifest">
+      <Name>Manifest</Name>
+      <Importer>ManifestImporter</Importer>
+      <Processor>ManifestProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buttons\GridButtonLITPressed.png">
+      <Name>GridButtonLITPressed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buttons\GridButtonDARKPressed.png">
+      <Name>GridButtonDARKPressed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buttons\ButtonRadiateAnimation.png">
+      <Name>ButtonRadiateAnimation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sounds\GlitchDrums\001Kick1.wav">
+      <Name>001Kick1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\GlitchDrums\002Kick2.wav">
+      <Name>002Kick2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\GlitchDrums\003Snare1.wav">
+      <Name>003Snare1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\GlitchDrums\003Zap1.wav">
+      <Name>003Zap1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\GlitchDrums\004Snare2.wav">
+      <Name>004Snare2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\GlitchDrums\005HatLo.wav">
+      <Name>005HatLo</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\GlitchDrums\006Click1.wav">
+      <Name>006Click1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\GlitchDrums\007Click1.wav">
+      <Name>007Click1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\GlitchDrums\008HatHi.wav">
+      <Name>008HatHi</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\GlitchDrums\009HatHiClsd.wav">
+      <Name>009HatHiClsd</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SpriteFont.spritefont">
+      <Name>SpriteFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buttons\NavButtonStates.png">
+      <Name>NavButtonStates</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buttons\ButtonStates.png">
+      <Name>ButtonStates</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="UtilityBackground.png">
+      <Name>UtilityBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sounds\Bass1\Bass.01.wav">
+      <Name>Bass.01</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.02.wav">
+      <Name>Bass.02</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.03.wav">
+      <Name>Bass.03</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.04.wav">
+      <Name>Bass.04</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.05.wav">
+      <Name>Bass.05</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.06.wav">
+      <Name>Bass.06</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.07.wav">
+      <Name>Bass.07</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.08.wav">
+      <Name>Bass.08</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.09.wav">
+      <Name>Bass.09</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.10.wav">
+      <Name>Bass.10</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.11.wav">
+      <Name>Bass.11</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.12.wav">
+      <Name>Bass.12</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.13.wav">
+      <Name>Bass.13</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.14.wav">
+      <Name>Bass.14</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.15.wav">
+      <Name>Bass.15</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.16.wav">
+      <Name>Bass.16</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.17.wav">
+      <Name>Bass.17</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.18.wav">
+      <Name>Bass.18</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.19.wav">
+      <Name>Bass.19</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.20.wav">
+      <Name>Bass.20</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.21.wav">
+      <Name>Bass.21</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.22.wav">
+      <Name>Bass.22</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.23.wav">
+      <Name>Bass.23</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.24.wav">
+      <Name>Bass.24</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.25.wav">
+      <Name>Bass.25</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.26.wav">
+      <Name>Bass.26</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.27.wav">
+      <Name>Bass.27</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.28.wav">
+      <Name>Bass.28</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.29.wav">
+      <Name>Bass.29</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.30.wav">
+      <Name>Bass.30</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.31.wav">
+      <Name>Bass.31</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.32.wav">
+      <Name>Bass.32</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.33.wav">
+      <Name>Bass.33</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.34.wav">
+      <Name>Bass.34</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.35.wav">
+      <Name>Bass.35</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.36.wav">
+      <Name>Bass.36</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass1\Bass.37.wav">
+      <Name>Bass.37</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LoadingScreen.png">
+      <Name>LoadingScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Sounds\Bass2\Bass2a.01.wav">
+      <Name>Bass2a.01</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.02.wav">
+      <Name>Bass2a.02</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.03.wav">
+      <Name>Bass2a.03</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.04.wav">
+      <Name>Bass2a.04</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.05.wav">
+      <Name>Bass2a.05</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.06.wav">
+      <Name>Bass2a.06</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.07.wav">
+      <Name>Bass2a.07</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.08.wav">
+      <Name>Bass2a.08</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.09.wav">
+      <Name>Bass2a.09</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.10.wav">
+      <Name>Bass2a.10</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.11.wav">
+      <Name>Bass2a.11</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.12.wav">
+      <Name>Bass2a.12</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.13.wav">
+      <Name>Bass2a.13</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.14.wav">
+      <Name>Bass2a.14</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.15.wav">
+      <Name>Bass2a.15</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.16.wav">
+      <Name>Bass2a.16</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.17.wav">
+      <Name>Bass2a.17</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.18.wav">
+      <Name>Bass2a.18</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.19.wav">
+      <Name>Bass2a.19</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.20.wav">
+      <Name>Bass2a.20</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.21.wav">
+      <Name>Bass2a.21</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.22.wav">
+      <Name>Bass2a.22</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.23.wav">
+      <Name>Bass2a.23</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.24.wav">
+      <Name>Bass2a.24</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.25.wav">
+      <Name>Bass2a.25</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.26.wav">
+      <Name>Bass2a.26</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.27.wav">
+      <Name>Bass2a.27</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.28.wav">
+      <Name>Bass2a.28</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.29.wav">
+      <Name>Bass2a.29</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.30.wav">
+      <Name>Bass2a.30</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.31.wav">
+      <Name>Bass2a.31</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.32.wav">
+      <Name>Bass2a.32</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.33.wav">
+      <Name>Bass2a.33</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.34.wav">
+      <Name>Bass2a.34</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.35.wav">
+      <Name>Bass2a.35</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Bass2\Bass2a.36.wav">
+      <Name>Bass2a.36</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sounds\RealDrums\01Kick.wav">
+      <Name>01Kick</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\Drums2-1.02.wav">
+      <Name>Drums2-1.02</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\02Snare1.wav">
+      <Name>02Snare1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\03Snare2.wav">
+      <Name>03Snare2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\04Snare3.wav">
+      <Name>04Snare3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\Drums2-1.06.wav">
+      <Name>Drums2-1.06</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\Drums2-1.07.wav">
+      <Name>Drums2-1.07</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\Drums2-1.08.wav">
+      <Name>Drums2-1.08</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\05Hat1.wav">
+      <Name>05Hat1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\Drums2-1.10.wav">
+      <Name>Drums2-1.10</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\Drums2-1.11.wav">
+      <Name>Drums2-1.11</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\Drums2-1.12.wav">
+      <Name>Drums2-1.12</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\Drums2-1.13.wav">
+      <Name>Drums2-1.13</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\06Tamb.wav">
+      <Name>06Tamb</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\Drums2-1.15.wav">
+      <Name>Drums2-1.15</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\08RideBell.wav">
+      <Name>08RideBell</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\RealDrums\07Ride.wav">
+      <Name>07Ride</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sounds\Glock\Glock1.01.wav">
+      <Name>Glock1.01</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.02.wav">
+      <Name>Glock1.02</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.03.wav">
+      <Name>Glock1.03</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.04.wav">
+      <Name>Glock1.04</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.05.wav">
+      <Name>Glock1.05</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.06.wav">
+      <Name>Glock1.06</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.07.wav">
+      <Name>Glock1.07</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.08.wav">
+      <Name>Glock1.08</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.09.wav">
+      <Name>Glock1.09</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.10.wav">
+      <Name>Glock1.10</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.11.wav">
+      <Name>Glock1.11</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.12.wav">
+      <Name>Glock1.12</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.13.wav">
+      <Name>Glock1.13</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.14.wav">
+      <Name>Glock1.14</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.15.wav">
+      <Name>Glock1.15</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.16.wav">
+      <Name>Glock1.16</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.17.wav">
+      <Name>Glock1.17</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.18.wav">
+      <Name>Glock1.18</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.19.wav">
+      <Name>Glock1.19</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.20.wav">
+      <Name>Glock1.20</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.21.wav">
+      <Name>Glock1.21</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.22.wav">
+      <Name>Glock1.22</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.23.wav">
+      <Name>Glock1.23</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Glock\Glock1.24.wav">
+      <Name>Glock1.24</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>RawWAVProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
+  <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
