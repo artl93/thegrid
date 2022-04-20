@@ -30,6 +30,11 @@ namespace AudioLibraryTests
         {
             const int sampleRate = 44100;
             const int channels = 1;
+            int offset = 0; 
+            int frame = 0;
+            var outData = new short[256 * channels];
+            int length = outData.Length;
+
             var target = Mixer.Create();
 
             var insert1 = CreateWaveformInsert(0.5F);
@@ -46,10 +51,6 @@ namespace AudioLibraryTests
             var expectedData = new short[256 * channels];
             expectedResultGenerator.WriteToOutput(expectedData, 0, expectedData.Length, 0);
 
-            var outData = new short[256 * channels]; // TODO: Initialize to an appropriate value
-            int offset = 0; // TODO: Initialize to an appropriate value
-            int length = outData.Length; // TODO: Initialize to an appropriate value
-            int frame = 0; // TODO: Initialize to an appropriate value
             target.WriteToOutput(outData, offset, length, frame);
 
             for (int i = 0; i < (expectedData.Length); i += sizeof(short))
